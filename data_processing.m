@@ -8,8 +8,8 @@ g = 9.8;
 %us acc 123 giro 123 magn 123 rotaz 1234 p h t 
 % test_1_s = 24180;
 % test_1_f = 26189;
-test_2_s = 34047-100;
-test_2_f = 35905+100;
+test_2_s = 34047-1000;
+test_2_f = 35905+1000;
 
 flight_start = test_2_s;
 flight_end = test_2_f;
@@ -18,6 +18,7 @@ flight_end = test_2_f;
 filename = 'test_2.TXT';
 data_complete = readmatrix(filename);
 data = data_complete(flight_start:flight_end,:);
+writematrix(data,'rocket_broad.txt');
 
 time = data(:,1)/(10^6);
 acc_raw = data(:,2:4);
